@@ -13,11 +13,11 @@ void FourInRow::showBoard(){
     for(int i = 0; i<BOARD_HEIGHT;i++){
         cout<<endl<<" "<<i+1<<"|";
         for(int j = 0; j<BOARD_WIDTH;j++){
-            cout<<board[j][i]<<" ";
+            cout<<board[j][i]<<"";
         }
         cout<<"|";
      }
-    cout<<endl<<"   1 2 3 4 5 6 7";
+    cout<<endl<<"   1234567";
     cout<<endl;
 };
 
@@ -91,7 +91,7 @@ char FourInRow::checkWinner(){
                         }
                         break;
                     case 3:
-                        if((i+j-(max-1)>=0) && (i+j-(max-1)<BOARD_WIDTH)){
+                        if((i+j-(max-1)>=0) && (i+j-(max-1)<BOARD_WIDTH)&& (j<BOARD_HEIGHT)){
                             z =board[i+j-(max-1)][j];
                         }
                         else{
@@ -99,7 +99,7 @@ char FourInRow::checkWinner(){
                         }
                         break;
                     case 4:
-                        if((max-i-j>=0) && (max-i-j<BOARD_WIDTH)){
+                        if((max-i-j>=0) && (max-i-j<BOARD_WIDTH)&& (j<BOARD_HEIGHT)){
                             z =board[max-j-i][j];
                         }
                         else{
@@ -107,7 +107,7 @@ char FourInRow::checkWinner(){
                         }
                         break;
                     case 5:
-                        if((2*max-2-j-i<BOARD_WIDTH) && (2*max-2-j-i>=0)){
+                        if((2*max-2-j-i<BOARD_WIDTH) && (2*max-2-j-i>=0)&& (j<BOARD_HEIGHT)){
                             z =board[2*max-2-j-i][j];
                         }
                         else{
